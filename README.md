@@ -1,5 +1,5 @@
 # React-native-flastlist-header-animated
 
-npm install
-npm run start
-react-native run ios
+1. npm install
+2. npm run start
+3. react-native run ios
