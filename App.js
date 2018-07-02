@@ -98,6 +98,7 @@ export default class AnimatedHeader extends React.Component {
           backgroundColor='rgba(0, 0, 0, 0.251)'
         />
 				<AnimatedFlatList
+        contentContainerStyle={{ paddingTop: Platform.OS === 'ios' ? 0 : HEADER_MAX_HEIGHT }}
           style={styles.fill}
 					scrollEventThrottle={16} // <-- Use 1 here to make sure no events are ever missed
 					onScroll={Animated.event(
@@ -309,13 +310,12 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   icBack: {
-    marginTop: 10
+    // marginTop: 10
   },
   btnBackContainer: {
     position: 'absolute',
-    top: 0,
     left: 0,
-    bottom: 0,
+    bottom: Platform.OS === 'ios' ? 19 : 8,
     width: 60,
     backgroundColor: 'transparent',
     justifyContent: 'center'
@@ -323,7 +323,5 @@ const styles = StyleSheet.create({
   btnBack: {
     width: '100%',
     paddingLeft: 10,
-    height: '100%',
-    justifyContent: 'center',
   }
 });
